@@ -1,0 +1,15 @@
+{        
+    "file_name": "RehabBCI_calibration",
+    "markers_dict": {"start_game": 416,
+                    "start_trial": 417,
+                    "indicator_MI": 418,
+                    "indicator_rest": 419,
+                    "go_cue_MI": 420,
+                    "go_cue_rest": 421,
+                    "start_feedback_MI": 422,
+                    "start_feedback_rest": 423,
+                    "end_feedback_MI": 424,
+                    "end_feedback_rest": 425,
+                    "end_trial": 426,
+                    "end_game": 498}
+                }

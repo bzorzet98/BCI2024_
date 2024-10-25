@@ -1,0 +1,73 @@
+Brain Vision Data Exchange Marker File, Version 1.0
+; Exported using pybv 0.7.5
+
+[Common Infos]
+Codepage=UTF-8
+DataFile=sub-001_ses-0_task-calibration_run-1_eeg.eeg
+
+[Marker Infos]
+; Each entry: Mk<Marker number>=<Type>,<Description>,<Position in data points>,
+;             <Size in data points>, <Channel number (0 = marker is related to all channels)>
+;             <Date (YYYYMMDDhhmmssuuuuuu)>
+; Fields are delimited by commas, some fields might be omitted (empty).
+; Commas in type or description text are coded as "\1".
+Mk1=Stimulus,S418,3597,1,0
+Mk2=Stimulus,S421,4349,1,0
+Mk3=Stimulus,S424,5654,1,0
+Mk4=Stimulus,S418,7350,1,0
+Mk5=Stimulus,S421,8098,1,0
+Mk6=Stimulus,S424,9384,1,0
+Mk7=Stimulus,S418,11102,1,0
+Mk8=Stimulus,S422,11351,1,0
+Mk9=Stimulus,S424,12696,1,0
+Mk10=Stimulus,S418,14852,1,0
+Mk11=Stimulus,S421,15605,1,0
+Mk12=Stimulus,S424,16842,1,0
+Mk13=Stimulus,S418,18606,1,0
+Mk14=Stimulus,S421,19357,1,0
+Mk15=Stimulus,S424,20697,1,0
+Mk16=Stimulus,S418,22358,1,0
+Mk17=Stimulus,S421,23107,1,0
+Mk18=Stimulus,S424,24295,1,0
+Mk19=Stimulus,S418,26112,1,0
+Mk20=Stimulus,S421,26861,1,0
+Mk21=Stimulus,S424,28128,1,0
+Mk22=Stimulus,S418,29863,1,0
+Mk23=Stimulus,S422,30113,1,0
+Mk24=Stimulus,S424,31639,1,0
+Mk25=Stimulus,S418,33616,1,0
+Mk26=Stimulus,S421,34367,1,0
+Mk27=Stimulus,S424,35735,1,0
+Mk28=Stimulus,S418,37367,1,0
+Mk29=Stimulus,S422,37620,1,0
+Mk30=Stimulus,S424,39122,1,0
+Mk31=Stimulus,S418,41121,1,0
+Mk32=Stimulus,S422,41370,1,0
+Mk33=Stimulus,S424,42845,1,0
+Mk34=Stimulus,S418,44874,1,0
+Mk35=Stimulus,S422,45123,1,0
+Mk36=Stimulus,S424,46817,1,0
+Mk37=Stimulus,S418,48626,1,0
+Mk38=Stimulus,S421,49375,1,0
+Mk39=Stimulus,S424,50635,1,0
+Mk40=Stimulus,S418,52377,1,0
+Mk41=Stimulus,S421,53128,1,0
+Mk42=Stimulus,S424,54393,1,0
+Mk43=Stimulus,S418,56130,1,0
+Mk44=Stimulus,S422,56380,1,0
+Mk45=Stimulus,S424,57864,1,0
+Mk46=Stimulus,S418,59885,1,0
+Mk47=Stimulus,S421,60633,1,0
+Mk48=Stimulus,S424,61894,1,0
+Mk49=Stimulus,S418,63636,1,0
+Mk50=Stimulus,S422,63888,1,0
+Mk51=Stimulus,S424,65404,1,0
+Mk52=Stimulus,S418,67390,1,0
+Mk53=Stimulus,S422,67639,1,0
+Mk54=Stimulus,S424,68948,1,0
+Mk55=Stimulus,S418,71140,1,0
+Mk56=Stimulus,S422,71389,1,0
+Mk57=Stimulus,S424,73159,1,0
+Mk58=Stimulus,S418,74891,1,0
+Mk59=Stimulus,S422,75141,1,0
+Mk60=Stimulus,S424,76699,1,0

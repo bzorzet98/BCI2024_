@@ -3,6 +3,12 @@ import os
 import time
 import subprocess
 
+# IMport the parent directory and the src to system
+actual_path = os.path.dirname(os.path.realpath(__file__))
+parent_path = os.path.abspath(os.path.join(actual_path, os.pardir))
+os.sys.path.append(parent_path)
+os.sys.path.append(os.path.join(parent_path, 'src'))
+
 from src.UdpComms import UdpComms
 from src.boards import setup_and_prepare_board
 from src.bids_files import save_raw_bids
@@ -84,4 +90,4 @@ board.stop_stream()
 board.release_session()
 
 # Save the markers and the data following BIDS format
-save_raw_bids(data, exg_channels, markers_dict, mne_info, info, session_type='MI')
+save_raw_bids(data, exg_channels, markers_dict, mne_info, info, PATH_TO_SAVE_DATA_EEG_MI, session_type='MI')

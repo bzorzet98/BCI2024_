@@ -19,12 +19,12 @@ from global_config import PATH_TO_SAVE_DATA_EEG_MI
 
 ########################## THIS INFORMATION MUST BE DEFINED EVERY TIME THAT YOU HAVE TO ADQUIRE DATA ##########################
 info = {
-        "subject_ID": "002",
+        "subject_ID": "003",
         "session_ID": "0",
-        "run_ID": "1",
+        "run_ID": "5",
         "task": "MI",
         "project_name": "MIBCIproject",
-        "gender": "femenine",
+        "gender": "masculine",
         "dominance": "right"
     }
 

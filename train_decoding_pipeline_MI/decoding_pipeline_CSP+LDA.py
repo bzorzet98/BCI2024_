@@ -22,10 +22,10 @@ from global_config import PATH_TO_SAVE_DATA_EEG_MI, PATH_TO_SAVE_MODELS_EEG_MI
 mne.set_log_level(verbose='warning') #to avoid info at terminal
 
 # SELECT THE SUBJECT, SESSION, RUNS AND TASK TO TRAIN THE DECODING PIPELINE
-training_subject_ID =  "001"
-training_session_ID = "0",
-training_runs_ID = ["1"],
-training_task = "MI",
+training_subject_ID =  "003"
+training_session_ID = "0"
+training_runs_ID = ["3", "4","5"]
+training_task = "MI"
 project_name = "MIBCIproject"
 
 epochs = []
@@ -57,7 +57,7 @@ for run in training_runs_ID:
 
     # Epoching
     tmin, tmax = -3, 6  # -1 s before trial indicative
-    event_ids = dict(MI=421, rest=422)  # map event IDs to tasks
+    event_ids = dict(MI=420, rest=421)  # map event IDs to tasks
 
     epochs_i = mne.Epochs(raw, events_matrix, tmin=tmin, tmax=tmax,
                          event_id=event_ids,

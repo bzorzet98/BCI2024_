@@ -23,8 +23,18 @@ from src.bids_files import save_raw_bids
 # Import the path to save the data
 from global_config import PATH_TO_SAVE_DATA_EEG_MI, PATH_TO_SAVE_MODELS_EEG_MI
 
+import mne
+import logging
+
+mne.set_log_level(verbose='CRITICAL')
+
+logging.getLogger('mne').setLevel(logging.CRITICAL)
+
+
 
 ########################## THIS INFORMATION MUST BE DEFINED EVERY TIME THAT YOU HAVE TO ADQUIRE DATA ##########################
+board_name = "cyton"
+stim_protocol_name = "stim_protocol_config_v2"
 # SELECT THE SUBJECT, SESSION, RUNS AND TASK TO TRAIN THE DECODING PIPELINE
 info_eeg_online = {
         "subject_ID": "001",
@@ -57,11 +67,21 @@ script_folder = os.path.dirname(os.path.realpath(__file__))
 
 #################### LOAD CONFIG FILES ####################
 # Load the board configuration file
-with open(os.path.join(script_folder, 'configs', 'board_config.json')) as file:
+if board_name == "cyton":
+    config_board_name = "board_config_cyton.json"
+elif board_name == "cyton_daisy":
+    config_board_name = "board_config_cyton_daisy.json"
+
+if stim_protocol_name == "stim_protocol_config_v2":
+    stim_protol_file_name = "stim_protocol_config_v2.json"
+elif stim_protocol_name == "stim_protocol_config":
+    stim_protol_file_name = "stim_protocol_config.json"
+
+with open(os.path.join(script_folder, 'configs', config_board_name)) as file:
     board_config = json.load(file)  # Python dictionary
 
 # Load the stimulation protocol configuration file
-with open(os.path.join(script_folder, 'configs', 'stim_protocol_config.json')) as file:
+with open(os.path.join(script_folder, 'configs', stim_protol_file_name)) as file:
     stim_protocol_config = json.load(file)  # Python dictionary
 
 file_name = stim_protocol_config['file_name']
@@ -92,15 +112,22 @@ trials_counter = 0
 while True:   # Until the end_game marker is received
     # Check if new data has been received from the Unity application
     received_data = sock.ReceiveData()
+    
     if received_data: # if NEW data has been received since last ReadReceivedData function call
         # Received data is a string with the format "marker_code-time stamp"
         markers_time_list.append(received_data)
+
+        print(f"received_data: {received_data}")
         marker_code = int(received_data.split('-')[0])
+
+        print(f"marker_code: {marker_code}")
         markers_code_list.append(marker_code)
+        
         if marker_code != markers_dict['end_game']:
             # Insert marker in the board
             board.insert_marker(int(marker_code))
             if marker_code == markers_dict['start_trial']:
+
                 trials_counter += 1
                 print ("Trial number: " + str(trials_counter))   # Just to see the progress of the calibration in the console
             
@@ -124,24 +151,18 @@ while True:   # Until the end_game marker is received
                 if y_true != y_pred:
                     print("The prediction was not the same.")
 
-                # "go_cue_up": 419
-                # "go_cue_down": 420
-                # "go_cue_left": 421
-                # "go_cue_right": 422
-
-                print(f"marker_code: {marker_code}")
-
                 print(f"y_true:{y_true}")
                 print(f"y_pred:{y_pred}")
+
                 # Move the robot
                 sock.SendData(commands_dict[y_pred])
+                print(f"Data enviada: {commands_dict[y_pred]}")
 
                 trials_arrays_list.append(trial_array)
                 y_true_list.append(y_true)
                 y_pred_list.append(y_pred)
         else:
             break
-
 
 time.sleep(3)
 protocol.kill()

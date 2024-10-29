@@ -1,0 +1,18 @@
+{
+    "TaskName": "MI",
+    "Manufacturer": "Brain Products",
+    "PowerLineFrequency": 50.0,
+    "SamplingFrequency": 125.0,
+    "SoftwareFilters": "n/a",
+    "RecordingDuration": 152.664,
+    "RecordingType": "continuous",
+    "EEGReference": "n/a",
+    "EEGGround": "n/a",
+    "EEGPlacementScheme": "n/a",
+    "EEGChannelCount": 16,
+    "EOGChannelCount": 0,
+    "ECGChannelCount": 0,
+    "EMGChannelCount": 0,
+    "MiscChannelCount": 0,
+    "TriggerChannelCount": 0
+}

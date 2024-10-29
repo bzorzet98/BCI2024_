@@ -1,0 +1,7 @@
+{
+	"subject_ID": "001",
+	"session_ID": "0",
+	"runs_ID": ["1"],
+	"task": "calibration",
+    "project_name": "MIBCIproject"
+}

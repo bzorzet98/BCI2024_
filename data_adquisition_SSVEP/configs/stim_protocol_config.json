@@ -1,0 +1,23 @@
+{        
+    "file_name": "SSVEP_calibration",
+    "markers_dict": {"start_game": 416,
+                    "start_trial": 417,
+                    "indicator_up": 418,
+                    "indicator_down": 419,
+                    "indicator_left": 420,
+                    "indicator_right": 421,
+                    "go_cue_up": 422,
+                    "go_cue_down": 423,
+                    "go_cue_left": 424,
+                    "go_cue_right": 425,
+                    "start_feedback_up": 426,
+                    "start_feedback_down": 427,
+                    "start_feedback_left": 428,
+                    "start_feedback_right": 429,
+                    "end_feedback_up": 430,
+                    "end_feedback_down": 431,
+                    "end_feedback_left": 432,
+                    "end_feedback_right": 433,
+                    "end_trial": 434,
+                    "end_game": 498}
+                }

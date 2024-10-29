@@ -1,5 +1,5 @@
 {
-    "board_ID": -1, 
+    "board_ID": 2, 
     "port": "COM8",
     "ch_list": [
     	"Fp1",

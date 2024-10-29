@@ -41,10 +41,12 @@ with open(os.path.join(script_folder, 'configs', 'board_config.json')) as file:
 with open(os.path.join(script_folder, 'configs', 'stim_protocol_config.json')) as file:
     stim_protocol_config = json.load(file)  # Python dictionary
 
-
+folder_name = stim_protocol_config['folder_name']
 file_name = stim_protocol_config['file_name']
 markers_dict = stim_protocol_config['markers_dict']
-stim_protocol_file_path = os.path.join(script_folder, 'stimulation_protocol',stim_protocol_config['file_name'])
+stim_protocol_file_path = os.path.join(script_folder, 'stimulation_protocol',  
+                                       stim_protocol_config['folder_name'], 
+                                       stim_protocol_config['file_name'])
 
 # Set up the board, prepare it and start streaming
 board, mne_info, exg_channels = setup_and_prepare_board(board_config)
@@ -90,4 +92,4 @@ board.stop_stream()
 board.release_session()
 
 # Save the markers and the data following BIDS format
-save_raw_bids(data, exg_channels, markers_dict, mne_info, info, PATH_TO_SAVE_DATA_EEG_MI, session_type='MI')
+save_raw_bids(data, exg_channels, markers_dict, mne_info, info, PATH_TO_SAVE_DATA_EEG_MI, session_type='SSVEP')

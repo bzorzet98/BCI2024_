@@ -19,9 +19,9 @@ from global_config import PATH_TO_SAVE_DATA_EEG_MI
 
 ########################## THIS INFORMATION MUST BE DEFINED EVERY TIME THAT YOU HAVE TO ADQUIRE DATA ##########################
 info = {
-        "subject_ID": "001",
-        "session_ID": 0,
-        "run_ID": 1,
+        "subject_ID": "002",
+        "session_ID": "0",
+        "run_ID": "1",
         "task": "MI",
         "project_name": "MIBCIproject",
         "gender": "femenine",
@@ -41,10 +41,12 @@ with open(os.path.join(script_folder, 'configs', 'board_config.json')) as file:
 with open(os.path.join(script_folder, 'configs', 'stim_protocol_config.json')) as file:
     stim_protocol_config = json.load(file)  # Python dictionary
 
-
+folder_name = stim_protocol_config['folder_name']
 file_name = stim_protocol_config['file_name']
 markers_dict = stim_protocol_config['markers_dict']
-stim_protocol_file_path = os.path.join(script_folder, 'stimulation_protocol',stim_protocol_config['file_name'])
+stim_protocol_file_path = os.path.join(script_folder, 'stimulation_protocol',  
+                                       stim_protocol_config['folder_name'], 
+                                       stim_protocol_config['file_name'])
 
 # Set up the board, prepare it and start streaming
 board, mne_info, exg_channels = setup_and_prepare_board(board_config)
@@ -61,6 +63,7 @@ markers_time_list = []
 markers_code_list = []
 trials_arrays_list = []
 trials_counter = 0
+
 
 while True:   # Until the end_game marker is received
     # Check if new data has been received from the Unity application

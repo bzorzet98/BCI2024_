@@ -13,7 +13,7 @@ import subprocess
 
 from src.UdpComms import UdpComms
 from src.boards import setup_and_prepare_board
-from src.processing import predict_one_trial
+from src.processing import predict_one_trial_MI
 from src.bids_files import save_raw_bids
 
 # Import the parent directory and the src to system

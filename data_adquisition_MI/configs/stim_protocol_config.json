@@ -1,5 +1,6 @@
 {        
-    "file_name": "RehabBCI_calibration",
+    "folder_name":"MI_protocol",    
+    "file_name": "Project_BCI_MI",
     "markers_dict": {"start_game": 416,
                     "start_trial": 417,
                     "indicator_MI": 418,
